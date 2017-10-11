@@ -1,0 +1,32 @@
+import axios from 'axios'
+
+export default class ItemService {
+    sendData(data) {
+        axios.post('http://localhost:3000/items/add/post', {
+            item: data
+        })
+
+        .then(function(response) {
+            console.log(response);
+        })
+
+        .catch(function(error) {
+            console.log(error);
+        });
+    }
+
+    updateData(data, id) {
+        axios.post('http://localhost:3000/items/update/'+id, {
+            item: data
+        })
+
+        .then(res => this.setState({ items: res.data }))
+        .catch(err => console.log(err))
+    }
+
+    deleteData(id) {
+        axios.get('http://localhost:3000/items/delete/'+id)
+
+        .then(console.log('Deleted')).catch(err => console.log(err))
+    }
+}
