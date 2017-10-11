@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import ItemService from './ItemService';
 
 export default class TableRow extends React.Component {
+
   constructor(props) {
     super(props);
 

@@ -8,6 +8,7 @@ export default class AddItem extends React.Component {
         this.state = {
             value: ''
         };
+
         this.addItemService = new ItemService();
 
         this.handleChange = this.handleChange.bind(this);
